@@ -10,6 +10,71 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <style>
+      /* Media Quries for Responsiveness */
+
+      @media only screen and (max-width: 640px) {
+        body {
+          background-color: aliceblue;
+        }
+        h2 {
+          font-size: 20px !important;
+          font-weight: 600;
+          text-align: center;
+        }
+        h2.text-dark {
+          color: brown !important;
+        }
+        h5 {
+          font-size: 14px;
+          font-weight: 400;
+          text-align: left;
+        }
+        h6 {
+          font-size: 12px;
+          color: gray;
+        }
+        p {
+          font-size: 12px;
+          color: rgb(14, 95, 176);
+          text-align: center;
+        }
+        ul {
+          font-size: 12px;
+          color: rgb(14, 95, 176);
+        }
+        p.accordion {
+          font-size: 12px;
+          color: brown;
+          text-align: center;
+        }
+        strong {
+          font-size: 12px;
+          color: brown;
+          text-align: center;
+        }
+        a {
+          font-size: 12px;
+          color: blueviolet;
+        }
+        nav.navbar {
+          background-color: black !important;
+        }
+        nav.navbar a.nav-link {
+          color: #ffffff !important;
+        }
+        .d-flex {
+          flex-direction: column !important;
+          padding-bottom: 10px;
+          align-items: center;
+        }
+        img.d-flex {
+          width: 80% !important;
+          padding: 10px;
+        }
+      }
+      /* Media Quries for Responsiveness */
+    </style>
   </head>
   <body>
     <header>
@@ -49,9 +114,7 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
               >
-                <strong>
-                    HTML tag usage, and why I used those tags
-                </strong>
+                <strong> HTML tag usage, and why I used those tags? </strong>
               </button>
             </h2>
             <div
@@ -60,14 +123,19 @@
               data-bs-parent="#accordQuestions"
             >
               <div class="accordion-body">
-                <p></p>
-                  I have used <strong>head, title, meta, script, style</strong> and link to
+                <p>
+                  I have used
+                  <strong>head, title, meta, script, style</strong> and link to
                   structure my layout for the website. Also, i have used tags
-                  like <strong>body, nav, header, main, section, h1 tags etc, divs and
-                    img tags</strong> to organize my html document and add either
-                  components or data. Lastly, i have used formatting tags like
-                  <strong>strong, b, aria</strong> which is benefecial for search engines and
-                  screen readers.
+                  like
+                  <strong
+                    >body, nav, header, main, section, h1 tags etc, divs and img
+                    tags</strong
+                  >
+                  to organize my html document and add either components or
+                  data. Lastly, i have used formatting tags like
+                  <strong>strong, b, aria</strong> which is benefecial for
+                  search engines and screen readers.
                 </p>
               </div>
             </div>
@@ -81,9 +149,7 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo"
               >
-              <strong>
-                What Bootstrap components I choose ?
-            </strong>
+                <strong> What Bootstrap components I choose ? </strong>
               </button>
             </h2>
             <div
@@ -92,23 +158,34 @@
               data-bs-parent="#accordQuestions"
             >
               <div class="accordion-body">
-                <p>I chose components as follows-</p>
+                <p>I chose the following components below -</p>
                 <ul>
-                    <li>
-                        Carousel - To show example images in home page.
-                    </li>
-                    <li>
-                        Cards with Customization - to show cards and sample data inside it on home page.
-                    </li>
-                    <li>
-                        Navbar - I chose the navbar to display the navigation for the project.
-                    </li>
-                    <li>
-                        Buttons - Used different types of button in about page like primary, secondary and outlined to showcase the button groups and also follow gestalt principles of similarity.
-                    </li>
-                    <li>
-                        Cards - to show the card header and description in the services page and addded customization
-                    </li>
+                  <li>Carousel - to show example images in home page.</li>
+                  <li>
+                    Cards with Customization - to show cards and sample data
+                    inside it on home page.
+                  </li>
+                  <li>
+                    Navbar - I chose the navbar to display the navigation for
+                    the project.
+                  </li>
+                  <li>
+                    Buttons - used different types of button in about page like
+                    primary, secondary and outlined to showcase the button
+                    groups and also follow gestalt principles of similarity.
+                  </li>
+                  <li>
+                    Cards - to show the card header and description in the
+                    services page and addded customization.
+                  </li>
+                  <li>
+                    Badges - added button with badges on the services page.
+                  </li>
+                  <li>
+                    Accordion - used accordions to display the answers of the
+                    question in a formated way using the gestalt principle of
+                    continuation.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -120,20 +197,25 @@
                 class="accordion-button"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapseThree"
               >
-              <strong>
-                What Bootstrap components you chose
-            </strong>
+                <strong>
+                  How I used media query to make the website responsive?
+                </strong>
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapseThree"
               class="accordion-collapse collapse show"
               data-bs-parent="#accordQuestions"
             >
               <div class="accordion-body">
-                <strong>Test</strong>
+                <p>
+                  I have used css media quries to change the navbar color, flex
+                  layout directions and text styles and font sizes to make it
+                  looks responsive when someone is accessed from a mobile
+                  device.
+                </p>
               </div>
             </div>
           </div>
@@ -144,24 +226,38 @@
                 class="accordion-button"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapseFour"
               >
-              <strong>
-                What Bootstrap components you chose
-            </strong>
+                <strong> What Gestalt principle I have chosen to use? </strong>
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapseFour"
               class="accordion-collapse collapse show"
               data-bs-parent="#accordQuestions"
             >
               <div class="accordion-body">
-                <strong>Test</strong>
+                <strong
+                  >Law of Similarity - items that share attributes will be
+                  visually grouped together</strong
+                >
+                <p>
+                  I have applied this law to showcase the
+                  <strong>cards</strong>in a similar format
+                </p>
+
+                <strong
+                  >Law of Continuation - A line will always appear to continue
+                  travelling in the same way</strong
+                >
+                <p>
+                  I have applied this law to showcase the
+                  <strong>accordions</strong>in the reports page where the
+                  questions are continuos
+                </p>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
