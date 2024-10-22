@@ -1,5 +1,5 @@
 .dashboard-container {
-  padding: 20px;
+  padding: 30px;
 }
 
 .title {
@@ -9,6 +9,37 @@
   text-align: left;
   font-size: 18px;
   font-weight: 400;
+}
+.stickybar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 60px;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.stickybarContent {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  gap: 30px;
+  color: #3b3b3b;
+}
+
+.stickybar p {
+  font-size: 12px;
+}
+
+.stickybar h1 {
+  font-size: 20px;
+}
+
+.stickybar-icon {
+  font-size: 20px;
 }
 .avatar {
   border-radius: 100px;
@@ -48,27 +79,52 @@
 
 .navigation {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  flex-direction: row;
   justify-content: space-between;
   gap: 10px;
+  align-items: center;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #ffffff;
-  padding: 10px;
-  background-color: #0471f6;
-  flex: 1;
+  color: #000000;
+  padding: 8px 12px;
+  background-color: #ffffff;
   outline: none;
   border-radius: 5px;
   text-align: center;
-  border: 1px solid #054da4;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  border: 0.5 solid #acacac;
+}
+
+.nav-link:hover {
+  background-color: #0471f6;
+  color: #ffffff;
+}
+
+.nav-linktwo {
+  text-decoration: none;
+  color: #000000;
+  padding: 8px 12px;
+  background-color: #e8e8e8;
+  outline: none;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.nav-linktwo:hover {
+  background-color: #0471f6;
+  color: #ffffff;
 }
 
 .widgets-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
