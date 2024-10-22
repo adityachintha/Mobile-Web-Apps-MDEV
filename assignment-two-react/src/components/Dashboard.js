@@ -31,13 +31,13 @@ const Dashboard = () => {
       {/* Widgets Section */}
       <div className="widgets-container">
         <div className="widget" id="widget-1">
-          Widget 1
+          <p>Weather Information</p>
         </div>
         <div className="widget" id="widget-2">
-          Widget 2
+          <p>News Feed</p>
         </div>
         <div className="widget" id="widget-3">
-          Widget 3
+          <p>Stocks & Market</p>
         </div>
       </div>
     </div>

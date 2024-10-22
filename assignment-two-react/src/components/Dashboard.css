@@ -56,9 +56,16 @@
 
 .widget {
   padding: 20px;
-  background-color: #e0e0e0;
+  background-color: #f1f1f1;
   border-radius: 8px;
-  text-align: center;
+  text-align: left;
+}
+
+.widget p {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0px;
+  line-height: 0px;
 }
 
 /* Responsive Styles */
