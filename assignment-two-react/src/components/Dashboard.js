@@ -13,14 +13,8 @@ const Dashboard = () => {
     const fetchWeatherData = async () => {
       const options = {
         method: "GET",
-        url: "https://open-weather13.p.rapidapi.com/city/toronto/EN",
-        headers: {
-          "X-RapidAPI-Key":
-            "0ad6dd1370msh14b056da351517cp161d8djsn60501c419bb3",
-          "X-RapidAPI-Host": "open-weather13.p.rapidapi.com",
-        },
+        url: "http://api.weatherapi.com/v1/current.json?key=e62123e264754e49aba172024242210&q=Toronto&aqi=no",
       };
-
       try {
         const response = await axios.request(options);
         console.log("Weather API response:", response.data);
@@ -45,8 +39,8 @@ const Dashboard = () => {
             src="https://xsgames.co/randomusers/avatar.php?g=pixel"
           ></img>
           <div className="bannertext">
-            <h2 className="title">Hello, Sam</h2>
-            <h2 className="subtitle">Welcome to your Dashboard!</h2>
+            <h2 className="title">Hello, Sam!</h2>
+            <h2 className="subtitle">Welcome to your Dashboard..</h2>
           </div>
         </div>
 
@@ -64,17 +58,64 @@ const Dashboard = () => {
       <div className="widgets-container">
         <div className="widget" id="widget-1">
           <h1>Weather Information</h1>
-          {loading ? (
-            <p>Loading weather data...</p>
-          ) : weather ? (
-            <div>
-              <p>City: {weather.name}</p>
-              <p>Temperature: {weather.main.temp}°C</p>
-              <p>Condition: {weather.weather[0].description}</p>
-            </div>
-          ) : (
-            <p>Failed to fetch weather data.</p>
-          )}
+          {/* Card View */}
+          <div className="widgetcard">
+            {loading ? (
+              <p>Loading weather data...</p>
+            ) : weather ? (
+              <div>
+                <p>
+                  <b>City:</b> {weather.location.name}
+                </p>
+                <p>
+                  <b>Country:</b> {weather.location.country}
+                </p>
+              </div>
+            ) : (
+              <p>Failed to fetch weather data.</p>
+            )}
+          </div>
+          {/* Card View */}
+          <div className="widgetcard">
+            {loading ? (
+              <p>Loading weather data...</p>
+            ) : weather ? (
+              <div>
+                <p>
+                  <b>Temperature :</b> {weather.current.temp_c}°C
+                </p>
+                <p>
+                  <b>Condition:</b> {weather.current.condition.text}
+                </p>
+              </div>
+            ) : (
+              <p>Failed to fetch weather data.</p>
+            )}
+          </div>
+          {/* Card View */}
+          <div className="widgetcard">
+            {loading ? (
+              <p>Loading weather data...</p>
+            ) : weather ? (
+              <div>
+                <p>
+                  <b>Humidity :</b> {weather.current.humidity}
+                </p>
+                <p>
+                  <b>UV Index :</b> {weather.current.uv}
+                </p>
+                <p>
+                  <b>Wind mph :</b> {weather.current.wind_mph}
+                </p>
+                <p>
+                  <b>Wind kph :</b> {weather.current.wind_kph}
+                </p>
+              </div>
+            ) : (
+              <p>Failed to fetch weather data.</p>
+            )}
+          </div>
+          <p>Last Updated on: {weather.current.last_updated}</p>
         </div>
         <div className="widget" id="widget-2">
           <p>News Feed</p>

@@ -55,24 +55,45 @@
 }
 
 .widget {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   padding: 20px;
   background-color: #f1f1f1;
   border-radius: 8px;
   text-align: left;
 }
 
+.widgetcard {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px;
+  margin-top: 10px;
+  padding: 15px;
+}
+
 .widget p {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
+  padding: 5px;
+  line-height: 0px;
+  color: #595959;
+}
+
+.widget b {
+  font-size: 14px;
+  font-weight: 600;
   padding: 0px;
   line-height: 0px;
+  color: black;
 }
 
 .widget h1 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   padding: 0px;
   line-height: 10px;
+  color: #0471f6;
 }
 
 /* Responsive Styles */
