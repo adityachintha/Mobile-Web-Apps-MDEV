@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { auth } from "../firebase";
 import {
+  // eslint-disable-next-line
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
