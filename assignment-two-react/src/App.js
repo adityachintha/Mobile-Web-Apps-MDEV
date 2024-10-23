@@ -7,6 +7,7 @@ import Register from "./auth/Register";
 import Calculator from "./components/Calculator";
 import Checklist from "./components/Checklist";
 import Logout from "./auth/Logout";
+import Calendar from "./components/Calender";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="calculator" element={<Calculator />} />
           <Route path="checklist" element={<Checklist />} />
+          <Route path="calender" element={<Calendar />} />
           <Route path="logout" element={<Logout />} />
         </Route>
       </Routes>
