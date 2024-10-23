@@ -133,7 +133,7 @@ const Login = () => {
         </button>
       </form>
       <div>
-        Not yet registered? <Link to="/">Register</Link>
+        Not yet registered? <Link to="/register">Register</Link>
       </div>
     </div>
   );

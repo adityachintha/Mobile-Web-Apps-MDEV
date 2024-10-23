@@ -182,7 +182,7 @@ const Register = () => {
         </button>
       </form>
       <div className="login">
-        Already registered? <Link to="/login">Login</Link>
+        Already registered? <Link to="/">Login</Link>
       </div>
     </div>
   );
