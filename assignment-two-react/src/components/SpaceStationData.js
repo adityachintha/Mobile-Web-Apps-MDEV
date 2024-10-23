@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Dashboard.css";
 
 const SpaceStationData = () => {
   const [data, setData] = useState(null);
@@ -56,9 +57,11 @@ const SpaceStationData = () => {
         <p>Loading ISS position data...</p>
       ) : data ? (
         <div>
-          <h4>ISS Position</h4>
-          <p>Latitude: {data.iss_position.latitude} N</p>
-          <p>Longitude: {data.iss_position.longitude} E</p>
+          <h3>ISS Position</h3>
+          <div className="widgetcardSpace">
+            <p>Latitude: {data.iss_position.latitude} N</p>
+            <p>Longitude: {data.iss_position.longitude} E</p>
+          </div>
         </div>
       ) : (
         <p>Failed to fetch ISS position data...</p>
@@ -69,12 +72,16 @@ const SpaceStationData = () => {
         <p>Loading people in space data...</p>
       ) : people.length > 0 ? (
         <div>
-          <h4>People in Space Right Now</h4>
-          <p>Total: {people.length}</p>
+          <h3>People in Space Right Now</h3>
+          <div className="widgetcardSpace">
+            <h1>{people.length}</h1>
+          </div>
           <ul>
             {people.slice(0, 10).map((person, index) => (
               <li key={index}>
-                <p>Name: {person.name}</p>
+                <p>
+                  <b>{person.name}</b>
+                </p>
                 <p>Craft: {person.craft}</p>
               </li>
             ))}
