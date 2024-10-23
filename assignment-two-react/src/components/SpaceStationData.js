@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Dashboard.css";
+import "../css/Dashboard.css";
 
 const SpaceStationData = () => {
   const [data, setData] = useState(null);

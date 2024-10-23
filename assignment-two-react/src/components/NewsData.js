@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Dashboard.css";
+import "../css/Dashboard.css";
 import axios from "axios";
 
 const NewsData = () => {
