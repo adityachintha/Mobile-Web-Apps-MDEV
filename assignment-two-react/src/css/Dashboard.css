@@ -213,6 +213,40 @@ h3 {
   color: #0471f6;
 }
 
+.user-list-text {
+  color: #000000;
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.user-card:hover {
+  transform: scale(1.02);
+}
+
+.user-details h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #007bff;
+}
+
+.user-details p {
+  color: #555;
+}
+
 /* Responsive Styles for Mobile */
 @media (max-width: 768px) {
   .banner {

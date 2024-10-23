@@ -1,45 +1,68 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Dashboard.css";
+import React, { useEffect, useState } from "react";
+import "../css/Dashboard.css";
 import WeatherData from "./WeatherData";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import NewsData from "./NewsData";
 import SpaceStationData from "./SpaceStationData";
 import UserProfile from "./UserProfile";
 import UserList from "./UserList";
+import { db } from '../firebase'; 
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 const Dashboard = () => {
-  return (
-    <div className="container">
-      <div className="stickybar">
-        <div className="stickybarContent">
-          <i className="fa-solid fa-bars stickybar-icon" aria-hidden="true"></i>
-          <h1>Dashboard</h1>
-        </div>
+  const [user, setUser] = useState(null);
+  const [userData, setUserData] = useState(null); 
+  const [loading, setLoading] = useState(true); 
 
-        <div className="navigation">
-          <Link to="/profile" className="nav-linktwo">
-            Profile
-          </Link>
-          <Link to="/users" className="nav-linktwo">
-            User List
-          </Link>
-        </div>
-        {/* <p>
-          Project for Mobile Web Apps, developed by Aditya Chintha and Abhirami
-          Pradeep Susi
-        </p> */}
-      </div>
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      setUser(user);
+      
+      // Fetch user data from Firestore based on email
+      const fetchUserData = async () => {
+        try {
+          const userQuery = query(
+            collection(db, "users"),
+            where("email", "==", user.email)
+          );
+          const querySnapshot = await getDocs(userQuery);
+          if (!querySnapshot.empty) {
+            const userDataDoc = querySnapshot.docs[0].data();
+            setUserData(userDataDoc);
+          } else {
+            console.log("No user data found in Firestore.");
+          }
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchUserData();
+    } else {
+      setLoading(false);
+    }
+  }, []); 
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+
       <div className="dashboard-container">
         <div className="banner">
           <div className="banner-left">
             <img
               className="avatar"
               alt="avatar"
-              src="https://xsgames.co/randomusers/avatar.php?g=male"
-            ></img>
+              src={userData ? "https://xsgames.co/randomusers/avatar.php?g=male" : "default-avatar-url"} // Optional: set a default avatar URL
+            />
             <div className="bannertext">
-              <h2 className="title">Hello, Sam!</h2>
+              <h2 className="title">{userData ? `Hello, ${userData.firstName+ " "+ userData.lastName}!` : 'Hello!'}</h2>
               <h2 className="subtitle">Welcome to your Dashboard..</h2>
             </div>
           </div>
@@ -49,27 +72,26 @@ const Dashboard = () => {
         <div className="widgets-container">
           <div className="widget" id="widget-1">
             <h1>Profile</h1>
-            <UserProfile></UserProfile>
+            <UserProfile />
           </div>
           <div className="widget" id="widget-2">
             <h1>User List</h1>
-            <UserList></UserList>
+            <UserList />
           </div>
           <div className="widget" id="widget-3">
             <h1>Weather</h1>
-            <WeatherData></WeatherData>
+            <WeatherData />
           </div>
           <div className="widget" id="widget-4">
             <h1>News</h1>
-            <NewsData></NewsData>
+            <NewsData />
           </div>
           <div className="widget" id="widget-5">
-            <h1>NASA Space </h1>
-            <SpaceStationData></SpaceStationData>
+            <h1>NASA Space</h1>
+            <SpaceStationData />
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
