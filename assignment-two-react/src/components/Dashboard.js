@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import WeatherData from "./WeatherData";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import NewsData from "./NewsData";
+import SpaceStationData from "./SpaceStationData";
 
 const Dashboard = () => {
   return (
@@ -44,14 +46,16 @@ const Dashboard = () => {
         {/* Widgets Section */}
         <div className="widgets-container">
           <div className="widget" id="widget-1">
-            <h1>Weather Information</h1>
+            <h1>Weather</h1>
             <WeatherData></WeatherData>
           </div>
           <div className="widget" id="widget-2">
-            <p>News Feed</p>
+            <h1>News</h1>
+            <NewsData></NewsData>
           </div>
           <div className="widget" id="widget-3">
-            <p>Stocks & Market</p>
+            <h1>NASA Space </h1>
+            <SpaceStationData></SpaceStationData>
           </div>
         </div>
       </div>
