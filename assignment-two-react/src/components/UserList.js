@@ -1,30 +1,41 @@
-// src/components/UserList.js
-import React, { useEffect, useState } from "react";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import React, { useState, useEffect } from "react";
+import { db } from "../firebase";
+import { collection, query, getDocs } from "firebase/firestore";
+import "../css/Dashboard.css"; // Import custom CSS
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const db = getFirestore();
-      const userCollection = collection(db, "users");
-      const userSnapshot = await getDocs(userCollection);
-      const userList = userSnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setUsers(userList);
+      try {
+        const userQuery = query(collection(db, "users"));
+        const querySnapshot = await getDocs(userQuery);
+
+        if (!querySnapshot.empty) {
+          const userList = querySnapshot.docs.map((doc) => doc.data());
+          setUsers(userList);
+        } else {
+          console.log("No user data found in Firestore.");
+        }
+      } catch (error) {
+        console.log("Error fetching users:", error);
+      }
     };
 
     fetchUsers();
   }, []);
 
   return (
-    <div>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.email}</li>
+    <div className="user-list-container">
+      <ul className="user-list">
+        {users.map((user, index) => (
+          <li key={index} className="user-card">
+            <div className="user-details">
+              <h4>Name: {user.firstName + " "+ user.lastName} </h4>
+              <p>Email: {user.email}</p>
+            </div>
+          </li>
         ))}
       </ul>
     </div>
