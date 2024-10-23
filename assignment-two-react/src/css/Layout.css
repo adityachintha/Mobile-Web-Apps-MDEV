@@ -39,7 +39,7 @@
 }
 
 .logout {
-  margin-top: 240%;
+  margin-top: 220%;
 }
 
 .stickybar {
@@ -71,6 +71,6 @@
 /* Mobile responsiveness */
 @media screen and (max-width: 600px) {
   .logout {
-    margin-top: 200%;
+    margin-top: 190%;
   }
 }
