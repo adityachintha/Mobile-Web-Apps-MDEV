@@ -5,6 +5,8 @@ import WeatherData from "./WeatherData";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import NewsData from "./NewsData";
 import SpaceStationData from "./SpaceStationData";
+import UserProfile from "./UserProfile";
+import UserList from "./UserList";
 
 const Dashboard = () => {
   return (
@@ -46,14 +48,22 @@ const Dashboard = () => {
         {/* Widgets Section */}
         <div className="widgets-container">
           <div className="widget" id="widget-1">
+            <h1>Profile</h1>
+            <UserProfile></UserProfile>
+          </div>
+          <div className="widget" id="widget-2">
+            <h1>User List</h1>
+            <UserList></UserList>
+          </div>
+          <div className="widget" id="widget-3">
             <h1>Weather</h1>
             <WeatherData></WeatherData>
           </div>
-          <div className="widget" id="widget-2">
+          <div className="widget" id="widget-4">
             <h1>News</h1>
             <NewsData></NewsData>
           </div>
-          <div className="widget" id="widget-3">
+          <div className="widget" id="widget-5">
             <h1>NASA Space </h1>
             <SpaceStationData></SpaceStationData>
           </div>
