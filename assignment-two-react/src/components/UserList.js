@@ -7,6 +7,7 @@ const UserList = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
+    //fetch all user data from firestore
     const fetchUsers = async () => {
       try {
         const userQuery = query(collection(db, "users"));
@@ -32,7 +33,7 @@ const UserList = () => {
         {users.map((user, index) => (
           <li key={index} className="user-card">
             <div className="user-details">
-              <h4>Name: {user.firstName + " "+ user.lastName} </h4>
+              <h4>Name: {user.firstName + " " + user.lastName} </h4>
               <p>Email: {user.email}</p>
             </div>
           </li>

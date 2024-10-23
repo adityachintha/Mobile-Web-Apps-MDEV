@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { auth, db } from '../firebase'; 
-import { collection, addDoc } from 'firebase/firestore';
+import { auth, db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom"; 
-import { FaEye, FaEyeSlash } from "react-icons/fa"; 
+import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./Register.css"; 
+import "../css/Register.css";
 const Register = () => {
   // State variables for form data
   const [firstName, setFirstName] = useState("");
@@ -20,7 +20,7 @@ const Register = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [firebaseError, setFirebaseError] = useState("");
-  const [showPassword, setShowPassword] = useState(false); 
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -66,18 +66,22 @@ const Register = () => {
 
     // Firebase authentication and Firestore user creation
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
 
       // Add user data to Firestore
       await addDoc(collection(db, "users"), {
         uid: user.uid,
         email: user.email,
-        firstName,  
-        lastName,   
+        firstName,
+        lastName,
       });
 
-toast.success("User Registered Successfully", { autoClose: 3000 });    
+      toast.success("User Registered Successfully", { autoClose: 3000 });
       navigate("/login");
     } catch (error) {
       // Firebase-specific error handling
@@ -169,7 +173,7 @@ toast.success("User Registered Successfully", { autoClose: 3000 });
             className={`input-field ${passwordError ? "input-error" : ""}`}
           />
           <span className="password-toggle" onClick={togglePasswordVisibility}>
-            {showPassword ? <FaEyeSlash /> : <FaEye />} 
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
           </span>
           {passwordError && <p className="error-text">{passwordError}</p>}
         </div>

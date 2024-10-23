@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../firebase'; 
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import React, { useState, useEffect } from "react";
+import { db } from "../firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import "../css/Dashboard.css";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
-  const [userData, setUserData] = useState(null); 
-  const [loading, setLoading] = useState(true); 
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const user = JSON.parse(storedUser);
       setUser(user);
-      
+
       // Fetch user data from Firestore based on email
       const fetchUserData = async () => {
         try {
@@ -39,7 +39,7 @@ const UserProfile = () => {
     } else {
       setLoading(false);
     }
-  }, []); 
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -47,8 +47,15 @@ const UserProfile = () => {
 
   return (
     <div className="user-profile-widget">
-      <img src={userData ? "https://xsgames.co/randomusers/avatar.php?g=male" : "default-avatar-url"} // Optional: set a default avatar URL
-             alt="Profile" className="avatar" />
+      <img
+        src={
+          userData
+            ? "https://xsgames.co/randomusers/avatar.php?g=male"
+            : "default-avatar-url"
+        } // Optional: set a default avatar URL
+        alt="Profile"
+        className="avatar"
+      />
       <h2>{userData.firstName + " " + userData.lastName}</h2>
       <p>Email: {user.email}</p>
     </div>

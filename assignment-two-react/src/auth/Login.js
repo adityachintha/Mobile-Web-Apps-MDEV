@@ -3,7 +3,7 @@ import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
-import "./Login.css";
+import "../css/Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -54,14 +54,21 @@ const Login = () => {
     if (!isValid) return; // Stop if validation failed
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
 
       // Store user data in localStorage
-      localStorage.setItem("user", JSON.stringify({
-        uid: user.uid,
-        email: user.email,
-      }));
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          uid: user.uid,
+          email: user.email,
+        })
+      );
 
       // Navigate to the dashboard after successful login
       navigate("/dashboard");
@@ -106,7 +113,7 @@ const Login = () => {
           />
           {emailError && <p className="error-text">{emailError}</p>}
         </div>
-        
+
         <div className="input-container">
           <input
             type={showPassword ? "text" : "password"} // Conditionally set input type
@@ -120,7 +127,7 @@ const Login = () => {
           </span>
           {passwordError && <p className="error-text">{passwordError}</p>}
         </div>
-        
+
         <button type="submit" className="submit-button">
           Login
         </button>

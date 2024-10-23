@@ -1,7 +1,13 @@
-// src/components/Checklist.js
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase"; // Make sure to import your Firestore instance
-import { collection, addDoc, onSnapshot, deleteDoc, doc, updateDoc } from "firebase/firestore"; // Import Firestore functions
+import {
+  collection,
+  addDoc,
+  onSnapshot,
+  deleteDoc,
+  doc,
+  updateDoc,
+} from "firebase/firestore"; // Import Firestore functions
 import "../css/Checklist.css"; // Import CSS for styling
 
 const Checklist = () => {
@@ -10,13 +16,16 @@ const Checklist = () => {
 
   // Fetch items from Firestore on component mount
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, "checklistItems"), (snapshot) => {
-      const fetchedItems = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      setItems(fetchedItems);
-    });
+    const unsubscribe = onSnapshot(
+      collection(db, "checklistItems"),
+      (snapshot) => {
+        const fetchedItems = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setItems(fetchedItems);
+      }
+    );
 
     return () => unsubscribe(); // Cleanup on unmount
   }, []);
@@ -27,7 +36,7 @@ const Checklist = () => {
       // Add new item to Firestore
       await addDoc(collection(db, "checklistItems"), {
         text: inputValue,
-        completed: false
+        completed: false,
       });
       setInputValue(""); // Clear the input
     }
@@ -44,7 +53,6 @@ const Checklist = () => {
   };
 
   return (
-       
     <div className="checklist">
       <h3 className="checklist-title">My Checklist</h3>
       <form onSubmit={handleAddItem} className="checklist-form">
@@ -55,21 +63,32 @@ const Checklist = () => {
           placeholder="Add a new task"
           className="checklist-input"
         />
-        <button type="submit" className="checklist-add-button">Add</button>
+        <button type="submit" className="checklist-add-button">
+          Add
+        </button>
       </form>
       <ul className="checklist-items">
         {items.map((item) => (
-          <li key={item.id} className={`checklist-item ${item.completed ? "completed" : ""}`}>
-            <span className="checklist-item-text">
-              {item.text}
-            </span>
+          <li
+            key={item.id}
+            className={`checklist-item ${item.completed ? "completed" : ""}`}
+          >
+            <span className="checklist-item-text">{item.text}</span>
             <div className="checklist-buttons">
-              <button 
+              <button
                 onClick={() => handleToggleComplete(item.id, item.completed)}
-                className={`checklist-done-button ${item.completed ? "completed" : ""}`}>
+                className={`checklist-done-button ${
+                  item.completed ? "completed" : ""
+                }`}
+              >
                 {item.completed ? "Undo" : "Done"}
               </button>
-              <button onClick={() => handleRemoveItem(item.id)} className="checklist-remove-button">Remove</button>
+              <button
+                onClick={() => handleRemoveItem(item.id)}
+                className="checklist-remove-button"
+              >
+                Remove
+              </button>
             </div>
           </li>
         ))}

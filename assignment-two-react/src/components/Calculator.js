@@ -1,4 +1,3 @@
-// src/components/Calculator.js
 import React, { useState } from "react";
 import "../css/Calculator.css"; // Import the CSS for styling
 
@@ -27,17 +26,26 @@ const Calculator = () => {
   };
 
   return (
-      
     <div className="calculator">
-      <div className="calculator-display">
-        {input || "0"}
-      </div>
+      <div className="calculator-display">{input || "0"}</div>
       <div className="calculator-buttons">
         {[
-          "7", "8", "9", "/",
-          "4", "5", "6", "*",
-          "1", "2", "3", "-",
-          "0", "C", "=", "+"
+          "7",
+          "8",
+          "9",
+          "/",
+          "4",
+          "5",
+          "6",
+          "*",
+          "1",
+          "2",
+          "3",
+          "-",
+          "0",
+          "C",
+          "=",
+          "+",
         ].map((btn) => (
           <button
             key={btn}
