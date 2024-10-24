@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "../css/Dashboard.css";
+// Team Members - Aditya Chintha (200595829), Abhirami Pradeep Susi (200589663)
+// File  - WeatherData.js
+// Mobile Web Apps Assignment 2
+
+import React, { useState, useEffect } from "react"; //Importing use state and use effect
+import axios from "axios"; //Importing axios
+import "../css/Dashboard.css"; //Importing css
 
 const WeatherData = ({ showLimited }) => {
-  const [weather, setWeather] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [weather, setWeather] = useState(null); //state for weather
+  const [loading, setLoading] = useState(true); //state for loading
   const [query, setQuery] = useState("Toronto"); // Default city on initial load
 
-  // Fetch weather data from Weather API
+  // Function to Fetch weather data from Weather API
   const fetchWeatherData = async () => {
     setLoading(true);
     const options = {
@@ -26,12 +30,12 @@ const WeatherData = ({ showLimited }) => {
     }
   };
 
-  // Handle input change
+  // Function to Handle input change
   const handleInputChange = (e) => {
     setQuery(e.target.value);
   };
 
-  // Fetch weather data on initial load
+  // use effect to fetch weather data on initial load
   useEffect(() => {
     fetchWeatherData();
   }, []);
@@ -43,6 +47,7 @@ const WeatherData = ({ showLimited }) => {
       <div className="weather-head">
         <h1>Weather</h1>
         <div className={showLimited ? "widgetInput" : "widget-input-main"}>
+          {/* Input */}
           <input
             type="text"
             placeholder="Enter your City"
@@ -50,7 +55,11 @@ const WeatherData = ({ showLimited }) => {
             onChange={handleInputChange}
             className="weather"
           />
-          <button className={showLimited ?"nav-link":"nav-link-btn"} onClick={fetchWeatherData}>
+          {/* Search Button */}
+          <button
+            className={showLimited ? "nav-link" : "nav-link-btn"}
+            onClick={fetchWeatherData}
+          >
             Search
           </button>
         </div>
@@ -59,6 +68,7 @@ const WeatherData = ({ showLimited }) => {
         <p>Loading weather data...</p>
       ) : weather ? (
         <div>
+          {/* Dsiplaying weather information from API */}
           <div className="weather-cards">
             <div className="widgetcard">
               <div className="widgetcardtwo">
