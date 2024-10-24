@@ -19,7 +19,6 @@ const Register = () => {
   const [lastNameError, setLastNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [firebaseError, setFirebaseError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -31,7 +30,6 @@ const Register = () => {
     setLastNameError("");
     setEmailError("");
     setPasswordError("");
-    setFirebaseError("");
 
     let isValid = true;
 
@@ -86,11 +84,11 @@ const Register = () => {
     } catch (error) {
       // Firebase-specific error handling
       if (error.code === "auth/email-already-in-use") {
-        setFirebaseError("This email is already in use.");
+        toast.error("This email is already in use.", { autoClose: 3000 });
       } else if (error.code === "auth/weak-password") {
-        setFirebaseError("The password is too weak.");
+        toast.error("The password is too weak.", { autoClose: 3000 });
       } else {
-        setFirebaseError(error.message);
+        toast.error(error.message, { autoClose: 3000 });
       }
     }
   };
@@ -132,7 +130,6 @@ const Register = () => {
   return (
     <div className="register-container">
       <h2>Register</h2>
-      {firebaseError && <p className="error-message">{firebaseError}</p>}
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <input

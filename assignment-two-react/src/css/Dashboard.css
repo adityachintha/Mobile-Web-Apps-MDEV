@@ -88,10 +88,9 @@
 
 .nav-link {
   text-decoration: none;
-  color: #000000;
+  color: #fff;
   padding: 8px 12px;
   background-color: #0471f6;
-  outline: none;
   border-radius: 5px;
   text-align: center;
   display: inline-block;
@@ -286,7 +285,8 @@ h3 {
 
 .weather-container,
 .news-data-container,
-.userlist-container-main {
+.userlist-container-main,
+.space-data-container {
   margin: 5rem;
   margin-top: 2rem;
   background-color: #f3f3f3;
@@ -295,12 +295,14 @@ h3 {
   margin-left: 20%;
 }
 
-.userlist-container-main {
+.userlist-container-main,
+.space-data-container {
   width: 50%;
 }
 
 .news-data-container > h1,
-.userlist-container-main > h1 {
+.userlist-container-main > h1,
+.space-data-container > h1 {
   color: #f66e04;
   text-align: center;
 }

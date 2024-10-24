@@ -9,6 +9,7 @@ import {
   FaCloud,
   FaNewspaper,
   FaUser,
+  FaSpaceShuttle,
 } from "react-icons/fa"; // Importing icons
 import "../css/Layout.css";
 
@@ -70,6 +71,9 @@ const Layout = () => {
           </Link>
           <Link to="news" className="sidebar-link" onClick={toggleSidebar}>
             <FaNewspaper className="icon" /> News
+          </Link>
+          <Link to="space" className="sidebar-link" onClick={toggleSidebar}>
+            <FaSpaceShuttle className="icon" /> Nasa Space
           </Link>
           <Link to="users" className="sidebar-link" onClick={toggleSidebar}>
             <FaUser className="icon" /> All users

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../css/Dashboard.css";
 
-const SpaceStationData = () => {
+const SpaceStationData = ({showLimited}) => {
   const [data, setData] = useState(null);
   const [loadingISS, setLoadingISS] = useState(true);
   const [people, setPeople] = useState([]);
@@ -51,7 +51,7 @@ const SpaceStationData = () => {
   }, []);
 
   return (
-    <div>
+    <div className={!showLimited&&"space-data-container"}>
       <h1>NASA Space</h1>
 
       {/* ISS Position */}

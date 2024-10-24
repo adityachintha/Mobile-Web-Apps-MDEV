@@ -11,6 +11,7 @@ import Calendar from "./components/Calender";
 import NewsData from "./components/NewsData";
 import WeatherData from "./components/WeatherData";
 import UserList from "./components/UserList";
+import SpaceStationData from "./components/SpaceStationData";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="checklist" element={<Checklist />} />
           <Route path="calender" element={<Calendar />} />
           <Route path="users" element={<UserList />} />
+          <Route path="space" element={<SpaceStationData />} />
           <Route path="logout" element={<Logout />} />
         </Route>
       </Routes>

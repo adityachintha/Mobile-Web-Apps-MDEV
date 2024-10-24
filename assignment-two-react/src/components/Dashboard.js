@@ -84,7 +84,7 @@ const Dashboard = () => {
             <NewsData showLimited={true} />
           </div>
           <div className="widget" id="widget-5">
-            <SpaceStationData />
+            <SpaceStationData showLimited={true}/>
           </div>
         </div>
       </div>
