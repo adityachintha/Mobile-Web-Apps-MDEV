@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "../firebase";
+import { auth } from "../firebase"; // Import Auth
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import router DOM
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
-import { toast } from "react-toastify";
+import { toast } from "react-toastify"; // Import Toast
 import "react-toastify/dist/ReactToastify.css";
 import "../css/Login.css";
 
+//Function to Login
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +35,7 @@ const Login = () => {
 
     // Basic input validation
     let isValid = true;
-
+    //Condition for Email
     if (!email) {
       setEmailError("Email is required.");
       isValid = false;
@@ -42,7 +43,7 @@ const Login = () => {
       setEmailError("Please enter a valid email.");
       isValid = false;
     }
-
+    //Condition for Password
     if (!password) {
       setPasswordError("Password is required.");
       isValid = false;
@@ -73,8 +74,10 @@ const Login = () => {
       // Navigate to the dashboard after successful login
       navigate("/dashboard");
     } catch (error) {
-toast.error("Invalid email or password. Please try again.", { autoClose: 3000 });
-          }
+      toast.error("Invalid email or password. Please try again.", {
+        autoClose: 3000,
+      });
+    }
   };
 
   // Update email state and clear email error if it exists

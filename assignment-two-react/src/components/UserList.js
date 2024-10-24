@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { db } from "../firebase";
-import { collection, query, getDocs } from "firebase/firestore";
+// Team Members - Aditya Chintha (200595829), Abhirami Pradeep Susi (200589663)
+// File  - Userlist.js
+// Mobile Web Apps Assignment 2
+
+import React, { useState, useEffect } from "react"; // Importing usestate and useeffect
+import { db } from "../firebase"; // Importing db
+import { collection, query, getDocs } from "firebase/firestore"; // Importing collection, query and getdocs
 import { Link } from "react-router-dom"; // Use Link for anchor navigation
 import "../css/Dashboard.css"; // Import custom CSS
+
+//Function for user list
 
 const UserList = ({ showLimited }) => {
   const [users, setUsers] = useState([]);
