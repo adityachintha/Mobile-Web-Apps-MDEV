@@ -1,5 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, Outlet } from "react-router-dom";
+// Team Members - Aditya Chintha (200595829), Abhirami Pradeep Susi (200589663)
+// File  - Layout.js
+// Mobile Web Apps Assignment 2
+
+import React, { useState, useEffect, useRef } from "react"; //Importing usestate, useeffect and useref
+import { Link, Outlet } from "react-router-dom"; //Importing Link and Outlet
 import {
   FaHome,
   FaCalculator,
@@ -10,9 +14,11 @@ import {
   FaNewspaper,
   FaUser,
   FaSpaceShuttle,
+  FaSuitcase,
 } from "react-icons/fa"; // Importing icons
-import "../css/Layout.css";
+import "../css/Layout.css"; //Importing CSS for Layout
 
+//Function for Layout
 const Layout = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const sidebarRef = useRef(null); // Create a ref for the sidebar
@@ -28,7 +34,7 @@ const Layout = () => {
       setSidebarVisible(false);
     }
   };
-
+  // useeffect to handle the sidebar
   useEffect(() => {
     if (sidebarVisible) {
       document.addEventListener("mousedown", handleClickOutside);
