@@ -55,15 +55,6 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <div className="banner">
         <div className="banner-left">
-          <img
-            className="avatar"
-            alt="avatar"
-            src={
-              userData
-                ? "https://xsgames.co/randomusers/avatar.php?g=male"
-                : "default-avatar-url"
-            } // Optional: set a default avatar URL
-          />
           <div className="bannertext">
             <h2 className="title">
               {userData
@@ -77,25 +68,24 @@ const Dashboard = () => {
 
       {/* Widgets Section */}
       <div className="widgets-container">
-        <div className="widget" id="widget-1">
-          <h1>Profile</h1>
-          <UserProfile />
+        <div className="flex-1">
+          <div className="widget" id="widget-1">
+            <UserProfile />
+          </div>
+          <div className="widget" id="widget-3">
+            <WeatherData showLimited={true} />
+          </div>
         </div>
-        <div className="widget" id="widget-2">
-          <h1>User List</h1>
-          <UserList />
-        </div>
-        <div className="widget" id="widget-3">
-          <h1>Weather</h1>
-          <WeatherData />
-        </div>
-        <div className="widget" id="widget-4">
-          <h1>News</h1>
-          <NewsData />
-        </div>
-        <div className="widget" id="widget-5">
-          <h1>NASA Space</h1>
-          <SpaceStationData />
+        <div className="flex-2">
+          <div className="widget" id="widget-2">
+            <UserList showLimited={true} />
+          </div>
+          <div className="widget" id="widget-4">
+            <NewsData showLimited={true} />
+          </div>
+          <div className="widget" id="widget-5">
+            <SpaceStationData />
+          </div>
         </div>
       </div>
     </div>

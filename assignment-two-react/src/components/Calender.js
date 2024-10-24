@@ -1,5 +1,16 @@
 import React, { useState } from "react";
-import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addMonths, subMonths, addDays, isSameMonth, isSameDay } from "date-fns";
+import {
+  format,
+  startOfMonth,
+  endOfMonth,
+  startOfWeek,
+  endOfWeek,
+  addMonths,
+  subMonths,
+  addDays,
+  isSameMonth,
+  isSameDay,
+} from "date-fns";
 import "../css/Calender.css"; // Import custom styles
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -21,7 +32,9 @@ const Calendar = () => {
           <span>{format(currentMonth, dateFormat)}</span>
         </div>
         <div className="col col-end" onClick={nextMonth}>
-          <div className="icon"><FaChevronRight className="icon" /></div>
+          <div className="icon">
+            <FaChevronRight className="icon" />
+          </div>
         </div>
       </div>
     );
@@ -106,6 +119,7 @@ const Calendar = () => {
 
   return (
     <div className="calendar">
+      <h1>Calender</h1>
       {renderHeader()}
       {renderDays()}
       {renderCells()}

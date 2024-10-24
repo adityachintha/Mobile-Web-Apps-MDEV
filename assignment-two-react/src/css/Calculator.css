@@ -1,14 +1,19 @@
 .calculator {
-  background-color: #f0f0f0;
+  background-color: #f3f3f3;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 50%;
   padding: 20px;
   margin: 20px auto;
 }
 
+.calculator > h1 {
+  color: #f66e04;
+  text-align: center;
+}
+
 .calculator-display {
-  background-color: #282c34;
+  background-color: #f66e04;
   color: white;
   font-size: 2rem;
   padding: 10px;
@@ -29,14 +34,14 @@
   font-size: 1.5rem;
   border: none;
   border-radius: 5px;
-  background-color: #61dafb;
+  background-color: #0471f6;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .calculator-button:hover {
-  background-color: #21a1f1;
+  background-color: #e5f1ff;
 }
 
 .calculator-button:active {

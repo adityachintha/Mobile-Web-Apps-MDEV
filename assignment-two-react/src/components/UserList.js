@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, query, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom"; // Use Link for anchor navigation
 import "../css/Dashboard.css"; // Import custom CSS
 
-const UserList = () => {
+const UserList = ({ showLimited }) => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    //fetch all user data from firestore
+    // Fetch all user data from Firestore
     const fetchUsers = async () => {
       try {
         const userQuery = query(collection(db, "users"));
@@ -28,17 +29,31 @@ const UserList = () => {
   }, []);
 
   return (
-    <div className="user-list-container">
-      <ul className="user-list">
-        {users.map((user, index) => (
-          <li key={index} className="user-card">
-            <div className="user-details">
-              <h4>Name: {user.firstName + " " + user.lastName} </h4>
-              <p>Email: {user.email}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
+    <div className={!showLimited && "userlist-container-main"}>
+      <h1>User List</h1>
+
+      <div className="user-list-container">
+        <ul className="user-list">
+          {/* Show only the first 10 users if showLimited is true */}
+          {users
+            .slice(0, showLimited ? 10 : users.length)
+            .map((user, index) => (
+              <li key={index} className="user-card">
+                <div className="user-details">
+                  <h4>Name: {user.firstName + " " + user.lastName} </h4>
+                  <p>Email: {user.email}</p>
+                </div>
+              </li>
+            ))}
+        </ul>
+
+        {/* Display 'View More' link if showLimited is true and there are more than 10 users */}
+        {showLimited && users.length > 10 && (
+          <Link to="/users" className="view-more-link">
+            View More
+          </Link>
+        )}
+      </div>
     </div>
   );
 };

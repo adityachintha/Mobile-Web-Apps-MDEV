@@ -8,6 +8,9 @@ import Calculator from "./components/Calculator";
 import Checklist from "./components/Checklist";
 import Logout from "./auth/Logout";
 import Calendar from "./components/Calender";
+import NewsData from "./components/NewsData";
+import WeatherData from "./components/WeatherData";
+import UserList from "./components/UserList";
 
 const App = () => {
   return (
@@ -17,9 +20,12 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/" element={<Layout />}>
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="news" element={<NewsData />} />
+          <Route path="weather" element={<WeatherData />} />
           <Route path="calculator" element={<Calculator />} />
           <Route path="checklist" element={<Checklist />} />
           <Route path="calender" element={<Calendar />} />
+          <Route path="users" element={<UserList />} />
           <Route path="logout" element={<Logout />} />
         </Route>
       </Routes>

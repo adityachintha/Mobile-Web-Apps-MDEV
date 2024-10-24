@@ -27,6 +27,7 @@ const Calculator = () => {
 
   return (
     <div className="calculator">
+      <h1> Calculator</h1>
       <div className="calculator-display">{input || "0"}</div>
       <div className="calculator-buttons">
         {[

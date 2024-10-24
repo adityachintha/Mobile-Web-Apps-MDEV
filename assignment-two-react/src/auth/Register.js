@@ -82,7 +82,7 @@ const Register = () => {
       });
 
       toast.success("User Registered Successfully", { autoClose: 3000 });
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       // Firebase-specific error handling
       if (error.code === "auth/email-already-in-use") {

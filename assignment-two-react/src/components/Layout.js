@@ -5,7 +5,10 @@ import {
   FaCalculator,
   FaClipboardCheck,
   FaSignOutAlt,
-	FaCalendar,
+  FaCalendar,
+  FaCloud,
+  FaNewspaper,
+  FaUser,
 } from "react-icons/fa"; // Importing icons
 import "../css/Layout.css";
 
@@ -62,6 +65,16 @@ const Layout = () => {
           <Link to="calender" className="sidebar-link" onClick={toggleSidebar}>
             <FaCalendar className="icon" /> Calender
           </Link>
+          <Link to="weather" className="sidebar-link" onClick={toggleSidebar}>
+            <FaCloud className="icon" /> Weather
+          </Link>
+          <Link to="news" className="sidebar-link" onClick={toggleSidebar}>
+            <FaNewspaper className="icon" /> News
+          </Link>
+          <Link to="users" className="sidebar-link" onClick={toggleSidebar}>
+            <FaUser className="icon" /> All users
+          </Link>
+
           <Link
             to="logout"
             className="sidebar-link logout"

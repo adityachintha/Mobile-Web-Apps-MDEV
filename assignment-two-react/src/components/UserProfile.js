@@ -46,18 +46,23 @@ const UserProfile = () => {
   }
 
   return (
-    <div className="user-profile-widget">
-      <img
-        src={
-          userData
-            ? "https://xsgames.co/randomusers/avatar.php?g=male"
-            : "default-avatar-url"
-        } // Optional: set a default avatar URL
-        alt="Profile"
-        className="avatar"
-      />
-      <h2>{userData.firstName + " " + userData.lastName}</h2>
-      <p>Email: {user.email}</p>
+    <div>
+      <h1>Profile</h1>
+      <div className="user-profile-widget">
+        <img
+          src={
+            userData
+              ? "https://xsgames.co/randomusers/avatar.php?g=male"
+              : "default-avatar-url"
+          } // Optional: set a default avatar URL
+          alt="Profile"
+          className="avatar"
+        />
+        <div>
+          <h2>{userData?.firstName + " " + userData?.lastName}</h2>
+          <p>Email: {user?.email}</p>
+        </div>
+      </div>
     </div>
   );
 };

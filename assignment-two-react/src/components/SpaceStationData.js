@@ -52,6 +52,8 @@ const SpaceStationData = () => {
 
   return (
     <div>
+      <h1>NASA Space</h1>
+
       {/* ISS Position */}
       {loadingISS ? (
         <p>Loading ISS position data...</p>

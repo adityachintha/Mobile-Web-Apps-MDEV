@@ -1,9 +1,16 @@
 .calendar {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  width: 50%;
   margin: 20px auto;
   font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  padding: 2rem;
+}
+
+.calendar > h1 {
+  color: #f66e04;
+  text-align: center;
 }
 
 .header {
@@ -11,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #2196f3;
+  background-color: #f66e04;
   color: white;
   border-radius: 8px 8px 0 0;
 }
@@ -22,7 +29,7 @@
 
 .days {
   display: flex;
-  background-color: #2d68a2;
+  background-color: #e5f1ff;
   font-weight: bold;
 }
 
@@ -44,7 +51,7 @@
 }
 
 .cell {
-  background-color: #61dafb;
+  background-color: #0471f6;
   border: 1px solid #ddd;
 }
 

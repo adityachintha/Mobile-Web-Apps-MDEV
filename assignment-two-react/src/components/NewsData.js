@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/Dashboard.css";
 import axios from "axios";
 
-const NewsData = () => {
+const NewsData = ({ showLimited }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -28,7 +28,9 @@ const NewsData = () => {
   }, []);
 
   return (
-    <div>
+    <div className={!showLimited && "news-data-container"}>
+      <h1>News</h1>
+
       {loading ? (
         <p>Loading news data...</p>
       ) : data.length > 0 ? (

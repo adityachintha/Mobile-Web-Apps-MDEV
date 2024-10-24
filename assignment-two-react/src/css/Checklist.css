@@ -1,17 +1,16 @@
 .checklist {
-  background-color: #2d68a2;
+  background-color: #f3f3f3;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+  width: 50%;
   margin: 20px auto;
 }
 
 .checklist-title {
   text-align: center;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 2rem;
+  color: #f66e04;
   margin-bottom: 20px;
 }
 
@@ -33,15 +32,16 @@
   padding: 10px;
   margin-left: 10px;
   border: none;
-  background-color: #61dafb;
+  background-color: #0471f6;
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  width: 10rem;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .checklist-add-button:hover {
-  background-color: #21a1f1;
+  background-color: #e5f1ff;
   transform: scale(1.05);
 }
 
