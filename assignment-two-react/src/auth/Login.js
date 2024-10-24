@@ -3,6 +3,8 @@ import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../css/Login.css";
 
 const Login = () => {
@@ -10,7 +12,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [authError, setAuthError] = useState("");
   const [showPassword, setShowPassword] = useState(false); // State for password visibility
 
   const navigate = useNavigate();
@@ -30,7 +31,6 @@ const Login = () => {
     // Reset error messages
     setEmailError("");
     setPasswordError("");
-    setAuthError("");
 
     // Basic input validation
     let isValid = true;
@@ -73,8 +73,8 @@ const Login = () => {
       // Navigate to the dashboard after successful login
       navigate("/dashboard");
     } catch (error) {
-      setAuthError("Invalid email or password. Please try again.");
-    }
+toast.error("Invalid email or password. Please try again.", { autoClose: 3000 });
+          }
   };
 
   // Update email state and clear email error if it exists
@@ -101,7 +101,6 @@ const Login = () => {
   return (
     <div className="register-container">
       <h2>Login</h2>
-      {authError && <p className="error-message">{authError}</p>}
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <input
