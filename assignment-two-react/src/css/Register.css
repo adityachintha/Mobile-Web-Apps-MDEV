@@ -2,17 +2,17 @@
   text-align: center;
 }
 
-/* Remove borders and shadow for login container */
+/* Container for the register form */
 .register-container {
   width: 100%;
   max-width: 500px;
-  margin: 50px 400px;
+  margin: 50px auto; /* Center the container on all screen sizes */
   padding: 40px;
-  background: rgb(255, 255, 255); /* Transparent background */
-  border-radius: 8px; /* Rounded corners for a softer look */
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
   text-align: center;
-  backdrop-filter: blur(10px); /* Adds blur effect to background */
-  box-shadow: 5px 5px 10px 10px rgb(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2); /* Fixed rgba syntax */
 }
 
 /* Input container for email and password fields */
@@ -28,12 +28,7 @@
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 1em;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Light background for input fields */
+  background-color: rgba(255, 255, 255, 0.8);
   color: #333;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
@@ -48,7 +43,7 @@
 .error-text {
   color: #e31010;
   font-size: 0.9em;
-  margin-top: 5px; /* Spacing from the input field */
+  margin-top: 5px;
   text-align: left;
 }
 
@@ -81,7 +76,7 @@
 .password-toggle {
   position: absolute;
   right: 15px;
-  top: 25px;
+  top: 50%; /* Adjusted to center vertically */
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 1.2em;
@@ -106,15 +101,66 @@ a:hover {
 /* Mobile responsiveness */
 @media screen and (max-width: 600px) {
   .register-container {
-    padding: 30px;
-    margin: 50px auto;
+    width: 70%;
+    margin: 50px auto; /* Center the container on all screen sizes */
+    padding: 40px;
+  }
+
+  .input-field {
+    font-size: 0.9em;
+    padding: 10px; /* Adjusted padding */
   }
 
   .submit-button {
     font-size: 1em;
+    padding: 10px;
   }
 
   .password-toggle {
     font-size: 1.1em;
+  }
+}
+
+/* Tablets and medium screens */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .register-container {
+    max-width: 400px;
+    padding: 30px;
+  }
+
+  .input-field {
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  .submit-button {
+    font-size: 1.05em;
+    padding: 12px;
+  }
+
+  .password-toggle {
+    font-size: 1.2em;
+  }
+}
+
+/* Larger screens */
+@media screen and (min-width: 900px) {
+  .register-container {
+    max-width: 600px;
+    padding: 50px;
+  }
+
+  .input-field {
+    font-size: 1.1em;
+    padding: 14px;
+  }
+
+  .submit-button {
+    font-size: 1.2em;
+    padding: 14px;
+  }
+
+  .password-toggle {
+    font-size: 1.3em;
   }
 }

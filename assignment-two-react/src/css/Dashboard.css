@@ -4,28 +4,28 @@
 
 .title {
   text-align: left;
+  font-size: 24px; /* Larger title for better visibility */
 }
+
 .subtitle {
   text-align: left;
   font-size: 18px;
   font-weight: 400;
 }
+
 .stickybar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  background-color: #0471f6;
-  padding-left: 30px;
-  padding-right: 30px;
-  height: 60px;
   align-items: center;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #0471f6;
+  padding: 0 30px;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .stickybarContent {
-  flex-direction: row;
   display: flex;
   align-items: center;
-  padding-right: 20px;
   gap: 30px;
   color: #ffffff;
 }
@@ -41,38 +41,43 @@
 .stickybar-icon {
   font-size: 20px;
 }
+
 .avatar {
-  border-radius: 100px;
+  border-radius: 50%;
   width: 100px;
   height: 100px;
   margin-right: 20px;
 }
+
 .weather {
   padding: 10px;
   background-color: #ffffff;
   border: 1px solid #595959;
-  outline: none;
-  border-color: #9b9b9b;
-  margin-right: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  width: 75%;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px; /* Limit width on larger screens */
 }
 
 .widgetInput {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  height: fit-content;
 }
 
 .banner {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
+
 .bannertext {
+  display: flex;
   flex-direction: column;
+  margin-left: 3rem;
 }
+
 .banner-left {
   display: flex;
   align-items: center;
@@ -81,25 +86,12 @@
 
 .navigation {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   gap: 10px;
   align-items: center;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #fff;
-  padding: 8px 12px;
-  background-color: #0471f6;
-  border-radius: 5px;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 14px;
-  width: 10rem;
-}
-
+.nav-link,
 .nav-link-btn {
   text-decoration: none;
   color: #fff;
@@ -108,33 +100,33 @@
   border-radius: 5px;
   text-align: center;
   display: inline-block;
-  vertical-align: middle;
   font-size: 14px;
-  width: 15em;
+  flex: 1; /* Makes links flexible */
+  margin: 0 5px; /* Space between links */
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link-btn:hover {
   background-color: #e5f1ff;
   color: #ffffff;
 }
 
 .weather {
-  width: 15rem;
   margin-left: 5rem;
 }
+
 .weather-cards {
   display: flex;
 }
+
 .nav-linktwo {
   text-decoration: none;
-  color: #000000;
+  color: #000;
   padding: 8px 12px;
   background-color: #e8e8e8;
-  outline: none;
   border-radius: 5px;
   text-align: center;
   display: inline-block;
-  vertical-align: middle;
   font-size: 14px;
 }
 
@@ -145,33 +137,31 @@
 
 .widgets-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Default to column for smaller screens */
+  gap: 20px; /* Space between widgets */
 }
 
 .widget {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding: 20px;
   background-color: #f3f3f3;
   border-radius: 8px;
   text-align: left;
-  margin-right: 20px;
+  padding: 20px;
+  margin: 0 20px; /* Margin between widgets */
+  flex: 1; /* Flexible width for responsiveness */
 }
 
 .widgetcard {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 5px;
-  border: 1px;
-  margin-top: 10px;
   padding: 15px;
+  margin-top: 10px;
   margin-right: 10px;
-  width: 14rem;
+  width: 100%; /* Full width */
 }
+
 .widgetcardSpace {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 5px;
-  border: 1px;
   padding: 10px;
   align-items: center;
   text-align: left;
@@ -179,37 +169,26 @@
 }
 
 .widgetcardtwo {
-  flex-direction: row;
   display: flex;
   align-items: center;
 }
-.widgetcardSpace h3 {
-  font-size: 16px;
-  padding: 0px;
-  line-height: 0.5;
-  color: #000000;
-}
 
+.widgetcardSpace h3,
 .widgetcardSpace h1 {
-  font-size: 14px;
-  padding: 0px;
-  line-height: 0.5;
-  color: #000000;
+  font-size: 16px;
+  padding: 0;
+  color: #000;
 }
 
 .widget p {
   font-size: 14px;
   font-weight: 400;
-  padding: 5px;
-  line-height: 0px;
   color: #595959;
 }
 
 .widget b {
   font-size: 14px;
   font-weight: 600;
-  padding: 0px;
-  line-height: 0px;
   color: black;
 }
 
@@ -220,22 +199,19 @@ h3 {
 .widget h1 {
   font-size: 22px;
   font-weight: 800;
-  padding: 0px;
-  padding-bottom: 10px;
-  line-height: 10px;
+  padding: 0 0 10px;
   color: #f66e04;
 }
+
 .widget h2 {
   font-size: 30px;
   font-weight: 800;
-  padding: 0px;
-  line-height: 5px;
-  text-align: left;
+  padding: 0;
   color: #0471f6;
 }
 
 .user-list-text {
-  color: #000000;
+  color: #000;
 }
 
 .user-list {
@@ -273,12 +249,11 @@ h3 {
 .flex-2 {
   display: flex;
   margin-bottom: 20px;
-  justify-content: space-between;
   padding: 1rem;
 }
 
 .user-profile-widget {
-  height: 11rem;
+  height: 12rem;
 }
 
 #widget-1 {
@@ -314,7 +289,7 @@ h3 {
 
 .userlist-container-main,
 .space-data-container {
-  width: 50%;
+  width: 50%; /* Full width */
 }
 
 .news-data-container > h1,
@@ -323,10 +298,16 @@ h3 {
   color: #f66e04;
   text-align: center;
 }
-/* Responsive Styles for Mobile */
+
+.widget-input-main {
+  display: flex;
+  height: fit-content;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .banner {
-    flex-direction: column;
+    flex-direction: column; /* Stack banner items */
     align-items: center;
   }
 
@@ -335,51 +316,49 @@ h3 {
     height: 60px;
   }
 
-  .bannertext {
-    text-align: center;
-    margin-top: 10px;
-  }
-
   .navigation {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: column; /* Stack navigation items */
+    width: 100%; /* Full width for smaller screens */
   }
 
-  .nav-link {
-    width: 100%;
+  .nav-link,
+  .nav-link-btn {
+    width: 100%; /* Full width for links */
+    margin: 5px 0; /* Space between links */
   }
 
   .widgets-container {
-    grid-template-columns: 1fr;
+    flex-direction: column; /* Stack widgets vertically */
   }
 
   .widget {
-    width: 100%;
+    width: 100%; /* Full width for widgets */
+    margin: 0; /* Remove side margins */
   }
 
   .widget h2 {
-    font-size: 20px;
+    font-size: 20px; /* Adjust heading size */
   }
 }
 
 @media (max-width: 480px) {
   .title {
-    font-size: 20px;
+    font-size: 20px; /* Smaller title for small screens */
   }
 
   .subtitle {
-    font-size: 16px;
+    font-size: 16px; /* Smaller subtitle for small screens */
   }
 
   .widget h1 {
-    font-size: 16px;
+    font-size: 16px; /* Adjust widget title size */
   }
 
   .widget h2 {
-    font-size: 18px;
+    font-size: 18px; /* Adjust widget subtitle size */
   }
 
   .nav-link {
-    font-size: 14px;
+    font-size: 14px; /* Smaller link font size */
   }
 }
