@@ -1,5 +1,5 @@
 // Team Members - Aditya Chintha (200595829), Abhirami Pradeep Susi (200589663)
-// File  - Lagout.js
+// File  - Logout.js
 // Mobile Web Apps Assignment 2
 
 import { useEffect } from "react"; //Importing use effect

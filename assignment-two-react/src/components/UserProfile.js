@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { db } from "../firebase";
-import { collection, query, where, getDocs } from "firebase/firestore";
-import "../css/Dashboard.css";
+// Team Members - Aditya Chintha (200595829), Abhirami Pradeep Susi (200589663)
+// File  - Userprofile.js
+// Mobile Web Apps Assignment 2
+
+import React, { useState, useEffect } from "react"; //Importing usestate and use effect
+import { db } from "../firebase"; //Importing db
+import { collection, query, where, getDocs } from "firebase/firestore"; //Importing collection, query, where and getDocs
+import "../css/Dashboard.css"; //Importing Dashboard css
+
+//Function for userProfile
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
@@ -34,10 +40,10 @@ const UserProfile = () => {
           setLoading(false);
         }
       };
-
+      //Calling the function
       fetchUserData();
     } else {
-      setLoading(false);
+      setLoading(false); //Set the load to false if data is fetched
     }
   }, []);
 
@@ -52,7 +58,7 @@ const UserProfile = () => {
         <img
           src={
             userData
-              ? "https://xsgames.co/randomusers/avatar.php?g=male"
+              ? "https://xsgames.co/randomusers/avatar.php?g=male" //Random generating profile images
               : "default-avatar-url"
           } // Optional: set a default avatar URL
           alt="Profile"
