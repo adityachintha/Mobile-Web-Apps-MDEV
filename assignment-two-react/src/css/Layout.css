@@ -38,10 +38,6 @@
   font-size: 1.2em; /* Adjust size as needed */
 }
 
-.logout {
-  margin-top: 18rem;
-}
-
 .stickybar {
   position: fixed;
   top: 0;
