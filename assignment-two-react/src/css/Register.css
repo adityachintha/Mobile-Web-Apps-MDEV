@@ -1,15 +1,3 @@
-/* Apply a full-page greenish-blue background */
-body,
-html {
-  background: linear-gradient(
-    135deg,
-    #e5f1ff,
-    #e5f1ff
-  ); /* Greenish-blue gradient */
-  font-family: "Poppins", sans-serif; /* Use modern font */
-  color: rgb(0, 0, 0);
-}
-
 .App {
   text-align: center;
 }

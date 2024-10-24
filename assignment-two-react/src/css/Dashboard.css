@@ -62,6 +62,7 @@
 .widgetInput {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .banner {
@@ -96,7 +97,20 @@
   display: inline-block;
   vertical-align: middle;
   font-size: 14px;
-  width: 15rem;
+  width: 10rem;
+}
+
+.nav-link-btn {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 12px;
+  background-color: #0471f6;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  width: 15em;
 }
 
 .nav-link:hover {
@@ -259,6 +273,7 @@ h3 {
 .flex-2 {
   display: flex;
   margin-bottom: 20px;
+  justify-content: space-between;
 }
 
 .user-profile-widget {
@@ -272,6 +287,7 @@ h3 {
 
 .weather-head {
   display: flex;
+  justify-content: space-between;
 }
 
 .weather-head > h1 {

@@ -1,15 +1,3 @@
-/* Apply a full-page greenish-blue background */
-body,
-html {
-  background: linear-gradient(
-    135deg,
-    #38b5ef,
-    #38b5ef
-  ); /* Greenish-blue gradient */
-  font-family: "Poppins", sans-serif; /* Use modern font */
-  color: white;
-}
-
 /* Remove borders and shadow for login container */
 .register-container {
   width: 100%;

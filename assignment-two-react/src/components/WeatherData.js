@@ -50,7 +50,7 @@ const WeatherData = ({ showLimited }) => {
             onChange={handleInputChange}
             className="weather"
           />
-          <button className="nav-link" onClick={fetchWeatherData}>
+          <button className={showLimited ?"nav-link":"nav-link-btn"} onClick={fetchWeatherData}>
             Search
           </button>
         </div>
