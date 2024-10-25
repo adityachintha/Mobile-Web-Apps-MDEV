@@ -137,13 +137,13 @@ const WeatherData = ({ showLimited }) => {
                   </p>
                 </div>
               </div>
+              <p>Last Updated on: {weather?.current?.last_updated}</p>
             </>
           )}
         </div>
       ) : (
         <p>Failed to fetch data...</p>
       )}
-      <p>Last Updated on: {weather?.current?.last_updated}</p>
     </div>
   );
 };

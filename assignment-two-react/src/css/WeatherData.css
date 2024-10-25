@@ -54,7 +54,6 @@
 .weather-cards {
   display: flex;
   gap: 10px; /* Space between cards */
-  flex-wrap: wrap; /* Allows wrapping for responsiveness */
 }
 
 .widgetcard {
@@ -64,10 +63,6 @@
   margin-top: 10px;
   width: 100%; /* Full width */
   max-width: 350px; /* Set a max width for the cards */
-  height: 200px; /* Set a fixed height for uniformity */
-  min-height: 200px; /* Ensures that all cards are at least this height */
-  max-height: 200px; /* Ensures that cards don't grow taller */
-  box-sizing: border-box; /* Ensures padding doesn't affect size */
 }
 
 .widgetcardtwo {
@@ -78,6 +73,9 @@
 
 /* Responsive design for mobile devices */
 @media screen and (max-width: 600px) {
+  .weather-cards {
+    flex-direction: column;
+  }
   .weather-container {
     width: 100%; /* Take full width of the screen */
     padding: 1rem;
@@ -88,13 +86,9 @@
     margin-right: 0;
     margin-bottom: 1rem; /* Add margin for spacing */
   }
-
-  .widgetInput {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
+  .weather-head {
+    flex-direction: column;
   }
-
   .nav-link,
   .nav-link-btn {
     font-size: 12px;
@@ -104,11 +98,11 @@
 
   .weather-cards {
     flex-direction: column; /* Stack cards vertically */
+    width: 50%;
   }
 
   .widgetcard {
     width: 100%; /* Full width for cards on mobile */
-    height: 150px; /* Adjust height for smaller screens */
   }
 }
 
@@ -118,7 +112,16 @@
     width: 95%; /* Slightly wider on tablet */
     padding: 2rem;
   }
-
+  .weather-cards {
+    flex-direction: column;
+  }
+  .weather-head {
+    flex-direction: column;
+  }
+  .widgetInput {
+    width: fit-content;
+    margin-left: 50px;
+  }
   .weather-head > h1 {
     font-size: 1.6rem;
     margin-right: 10px;
@@ -132,7 +135,6 @@
 
   .widgetcard {
     width: calc(50% - 10px); /* Two cards per row */
-    height: 200px; /* Set uniform height for all cards */
   }
 }
 
@@ -149,6 +151,5 @@
 
   .widgetcard {
     width: calc(33.33% - 10px); /* Three cards per row */
-    height: 200px; /* Set uniform height for all cards */
   }
 }
