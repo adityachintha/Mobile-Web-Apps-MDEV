@@ -1,16 +1,22 @@
-import React, { useState, useEffect } from "react";
-import "../css/Dashboard.css";
-import axios from "axios";
+// Team Members - Aditya Chintha (200595829), Abhirami Pradeep Susi (200589663)
+// File  - NewsData.js
+// Mobile Web Apps Assignment 2
 
+import React, { useState, useEffect } from "react"; //Importing usestate and useeffect
+import "../css/Dashboard.css"; //Importing dashboard css
+import axios from "axios"; // Importing axios
+
+//Function for NewsData
 const NewsData = ({ showLimited }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  //use effect for fetching news data
   useEffect(() => {
     const fetchNewsData = async () => {
       const options = {
         method: "GET",
-        url: "https://ok.surf/api/v1/cors/news-feed",
+        url: "https://ok.surf/api/v1/cors/news-feed", // News API
       };
 
       try {
@@ -30,7 +36,7 @@ const NewsData = ({ showLimited }) => {
   return (
     <div className={!showLimited && "news-data-container"}>
       <h1>News</h1>
-
+      {/* Displaying News Widget from API*/}
       {loading ? (
         <p>Loading news data...</p>
       ) : data.length > 0 ? (
