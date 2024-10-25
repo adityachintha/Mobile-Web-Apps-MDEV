@@ -1,5 +1,5 @@
 .calculator {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 50%;
@@ -14,8 +14,8 @@
 
 /* Display styles */
 .calculator-display {
-  background-color: #f66e04;
-  color: white;
+  background-color: #dfdfdf;
+  color: rgb(7, 7, 7);
   font-size: 2rem;
   padding: 10px;
   border-radius: 5px;
