@@ -68,3 +68,49 @@
 .number {
   font-size: 16px;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .calendar {
+    width: 80%; /* Wider on smaller screens */
+    padding: 1.5rem; /* Reduce padding */
+  }
+
+  .header {
+    flex-direction: column; /* Stack header elements */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .days {
+    flex-wrap: wrap; /* Allow wrapping of day names */
+  }
+
+  .col {
+    width: 14.2857%; /* Keep the same for larger screens */
+    padding: 10px; /* Smaller padding for columns */
+  }
+
+  .number {
+    font-size: 14px; /* Smaller number font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar {
+    width: 95%; /* Almost full width */
+    padding: 1rem; /* Further reduce padding */
+  }
+
+  .header {
+    align-items: center; /* Center items */
+  }
+
+  .col {
+    width: 20%; /* 5 columns for smaller screens */
+    padding: 8px; /* Further reduce padding */
+  }
+
+  .number {
+    font-size: 12px; /* Even smaller number font size */
+  }
+}

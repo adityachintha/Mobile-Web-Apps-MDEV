@@ -101,3 +101,54 @@
 .checklist-remove-button:hover {
   transform: scale(1.05);
 }
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .checklist {
+    width: 90%; /* Expand to take more space on small screens */
+    padding: 15px;
+  }
+
+  .checklist-title {
+    font-size: 1.5rem; /* Slightly smaller text on small screens */
+  }
+
+  .checklist-form {
+    flex-direction: column; /* Stack input and button vertically */
+  }
+
+  .checklist-input {
+    margin-bottom: 10px; /* Add spacing between input and button */
+  }
+
+  .checklist-add-button {
+    width: 100%; /* Make the button full width on mobile */
+    margin-left: 0; /* Reset the margin */
+  }
+}
+
+/* Tablet responsiveness */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .checklist {
+    width: 75%; /* Medium width for tablet screens */
+  }
+
+  .checklist-title {
+    font-size: 1.75rem; /* Slightly smaller than desktop */
+  }
+
+  .checklist-add-button {
+    width: 8rem; /* Adjust button width for medium screens */
+  }
+}
+
+/* Larger screens */
+@media screen and (min-width: 901px) {
+  .checklist {
+    width: 50%; /* Standard width for larger screens */
+  }
+
+  .checklist-title {
+    font-size: 2rem;
+  }
+}

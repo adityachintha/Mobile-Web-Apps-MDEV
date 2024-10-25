@@ -59,12 +59,6 @@
   max-width: 300px; /* Limit width on larger screens */
 }
 
-.widgetInput {
-  display: flex;
-  justify-content: space-between;
-  height: fit-content;
-}
-
 .banner {
   display: flex;
   justify-content: space-between;
@@ -91,32 +85,8 @@
   align-items: center;
 }
 
-.nav-link,
-.nav-link-btn {
-  text-decoration: none;
-  color: #fff;
-  padding: 8px 12px;
-  background-color: #0471f6;
-  border-radius: 5px;
-  text-align: center;
-  display: inline-block;
-  font-size: 14px;
-  flex: 1; /* Makes links flexible */
-  margin: 0 5px; /* Space between links */
-}
-
-.nav-link:hover,
-.nav-link-btn:hover {
-  background-color: #e5f1ff;
-  color: #ffffff;
-}
-
 .weather {
   margin-left: 5rem;
-}
-
-.weather-cards {
-  display: flex;
 }
 
 .nav-linktwo {
@@ -150,15 +120,6 @@
   flex: 1; /* Flexible width for responsiveness */
 }
 
-.widgetcard {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 15px;
-  margin-top: 10px;
-  margin-right: 10px;
-  width: 100%; /* Full width */
-}
-
 .widgetcardSpace {
   background-color: #fff;
   border-radius: 5px;
@@ -166,11 +127,6 @@
   align-items: center;
   text-align: left;
   margin-bottom: 20px;
-}
-
-.widgetcardtwo {
-  display: flex;
-  align-items: center;
 }
 
 .widgetcardSpace h3,
@@ -261,21 +217,10 @@ h3 {
   height: fit-content;
 }
 
-.weather-head {
-  display: flex;
-  justify-content: space-between;
-}
-
-.weather-head > h1 {
-  margin-right: 100px;
-  color: #f66e04;
-}
-
 #widget-3 {
   width: 60%;
 }
 
-.weather-container,
 .news-data-container,
 .userlist-container-main,
 .space-data-container {
@@ -299,11 +244,6 @@ h3 {
   text-align: center;
 }
 
-.widget-input-main {
-  display: flex;
-  height: fit-content;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
   .banner {
@@ -319,12 +259,6 @@ h3 {
   .navigation {
     flex-direction: column; /* Stack navigation items */
     width: 100%; /* Full width for smaller screens */
-  }
-
-  .nav-link,
-  .nav-link-btn {
-    width: 100%; /* Full width for links */
-    margin: 5px 0; /* Space between links */
   }
 
   .widgets-container {
@@ -356,9 +290,5 @@ h3 {
 
   .widget h2 {
     font-size: 18px; /* Adjust widget subtitle size */
-  }
-
-  .nav-link {
-    font-size: 14px; /* Smaller link font size */
   }
 }
