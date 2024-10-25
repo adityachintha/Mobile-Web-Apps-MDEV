@@ -4,7 +4,7 @@
   width: 50%;
   margin: 20px auto;
   font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   padding: 2rem;
 }
 
@@ -18,8 +18,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #f66e04;
-  color: white;
+  background-color: #e5e5e5;
+  color: rgb(29, 29, 29);
   border-radius: 8px 8px 0 0;
 }
 
@@ -29,8 +29,9 @@
 
 .days {
   display: flex;
-  background-color: #e5f1ff;
+  background-color: #0471f6;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .body {
@@ -51,18 +52,18 @@
 }
 
 .cell {
-  background-color: #0471f6;
+  background-color: #e5f1ff;
   border: 1px solid #ddd;
 }
 
 .cell.selected {
-  background-color: #2196f3;
+  background-color: #0471f6;
   color: white;
 }
 
 .cell.disabled {
   background-color: #f9f9f9;
-  color: #ddd;
+  color: #9b9b9b;
 }
 
 .number {
