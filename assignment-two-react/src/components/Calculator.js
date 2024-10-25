@@ -26,44 +26,46 @@ const Calculator = () => {
   };
 
   return (
-    <div className="calculator">
-      <h1> Calculator</h1>
-      <div className="calculator-display">{input || "0"}</div>
-      <div className="calculator-buttons">
-        {[
-          "7",
-          "8",
-          "9",
-          "/",
-          "4",
-          "5",
-          "6",
-          "*",
-          "1",
-          "2",
-          "3",
-          "-",
-          "0",
-          "C",
-          "=",
-          "+",
-        ].map((btn) => (
-          <button
-            key={btn}
-            className="calculator-button"
-            onClick={() => {
-              if (btn === "=") {
-                handleCalculate();
-              } else if (btn === "C") {
-                handleClear();
-              } else {
-                handleButtonClick(btn);
-              }
-            }}
-          >
-            {btn}
-          </button>
-        ))}
+    <div>
+      <div className="calculator">
+        <h1> Calculator</h1>
+        <div className="calculator-display">{input || "0"}</div>
+        <div className="calculator-buttons">
+          {[
+            "7",
+            "8",
+            "9",
+            "/",
+            "4",
+            "5",
+            "6",
+            "*",
+            "1",
+            "2",
+            "3",
+            "-",
+            "0",
+            "C",
+            "=",
+            "+",
+          ].map((btn) => (
+            <button
+              key={btn}
+              className="calculator-button"
+              onClick={() => {
+                if (btn === "=") {
+                  handleCalculate();
+                } else if (btn === "C") {
+                  handleClear();
+                } else {
+                  handleButtonClick(btn);
+                }
+              }}
+            >
+              {btn}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
