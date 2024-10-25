@@ -116,8 +116,8 @@
   border-radius: 8px;
   text-align: left;
   padding: 20px;
-  margin: 0 20px; /* Margin between widgets */
-  flex: 1; /* Flexible width for responsiveness */
+  margin: 0; /* Remove margin for better fit on small screens */
+  width: 100%; /* Full width for responsiveness */
 }
 
 .widgetcardSpace {
@@ -206,6 +206,7 @@ h3 {
   display: flex;
   margin-bottom: 20px;
   padding: 1rem;
+  gap: 10px;
 }
 
 .user-profile-widget {
@@ -249,6 +250,7 @@ h3 {
   .banner {
     flex-direction: column; /* Stack banner items */
     align-items: center;
+    width: 100%; /* Full width */
   }
 
   .avatar {
@@ -264,6 +266,26 @@ h3 {
   .widgets-container {
     flex-direction: column; /* Stack widgets vertically */
   }
+  .user-profile-widget,
+  .flex-1,
+  .flex-2 {
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 1rem;
+    gap: 10px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  #widget-1 {
+    width: 100%;
+  }
+  #widget-3 {
+    width: 100%;
+  }
+  .user-profile-widget {
+    height: fit-content;
+  }
 
   .widget {
     width: 100%; /* Full width for widgets */
@@ -272,6 +294,18 @@ h3 {
 
   .widget h2 {
     font-size: 20px; /* Adjust heading size */
+  }
+
+  .user-profile-widget {
+    flex-direction: column; /* Stack user profile widget items */
+  }
+
+  .news-data-container,
+  .userlist-container-main,
+  .space-data-container {
+    width: 90%; /* Adjust container width */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
   }
 }
 
